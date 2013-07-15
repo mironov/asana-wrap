@@ -4,12 +4,12 @@ Ruby Wrapper for the [Asana API](http://developer.asana.com/documentation/). It 
 
 ## Installation
 
-gem file is not done yet
+rakefile is looking better now - get your oauth token from the asana webapp repo and drop it into the rakefile to play around
 
 
 ## Testing the rakefile
 
-#paste in your copy of the authentication token received from the oauth flow and off you go. 
+paste in your copy of the authentication token received from the oauth flow and off you go. 
 
 
 TODO: Write usage instructions here

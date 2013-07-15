@@ -1,4 +1,4 @@
-# Asana
+# Asana_Party
 
 Ruby Wrapper for the [Asana API](http://developer.asana.com/documentation/). It is for use with the Oauth Token acquired from the Authorization Grant Flow. 
 

@@ -1,5 +1,6 @@
 module Asana
   require 'httparty'
+  require 'ostruct'
   class Client
       include HTTParty
       attr_accessor :token
@@ -16,7 +17,7 @@ module Asana
         self.getresponse(uri, options)
       end
 
-  private
+private
       def self.prefix_engine(params)
         temphash = {}
         mappings = {fields: 'opt_fields', assignee: 'assignee'}
@@ -25,8 +26,8 @@ module Asana
       end
 
       def self.getresponse(uri, options)
-        response = self.get(uri, options)
-        response
-    end
+        hash = self.get(uri, options)
+        hash = OpenStruct.new(hash['data'])
+      end
   end
 end

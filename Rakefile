@@ -9,7 +9,7 @@ require './lib/asana/project'
 require './lib/asana/task'
 
 #token is for colin's klarna account - temporary token
-token = '0/ed47416f821826838c215c639b184fbc'
+token = '0/3c1c99e4551acf8060af7611a0c89371'
 
 namespace :asana do 
   desc 'all tasks'
@@ -41,10 +41,10 @@ namespace :asana do
   desc 'get the current user'
   task :get_user do
         params = {
-          fields: "email"
     }
     Asana::Client.authenticate(token)
-    Asana::User.me(params)
+    @user = Asana::User.me(params)
+    puts @user.name
   end
 
   desc 'get all users'

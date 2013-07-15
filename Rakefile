@@ -44,7 +44,7 @@ namespace :asana do
     }
     Asana::Client.authenticate(token)
     @user = Asana::User.me(params)
-    puts @user.name
+    puts @user
   end
 
   desc 'get all users'

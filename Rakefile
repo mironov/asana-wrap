@@ -9,7 +9,7 @@ require './lib/asana/project'
 require './lib/asana/task'
 
 #token is for colin's klarna account - temporary token
-token = '0/3c1c99e4551acf8060af7611a0c89371'
+token = '0/abb774ba9a4859d33d4336b2b8a127da'
 
 namespace :asana do 
   desc 'all tasks'

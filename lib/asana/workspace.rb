@@ -1,7 +1,7 @@
 module Asana
   class Workspace < Asana::Client
     
-      def self.all(params = {})
+    def self.all(params = {})
       uri = "/projects"
       self.format(uri, params)
     end

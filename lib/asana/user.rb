@@ -19,7 +19,7 @@ module Asana
       self.format(uri, params)
     end
 
-        def self.by_workspace(params ={})
+    def self.by_workspace(params ={})
       uri = "/workspaces/#{params[:workspace]}/users"
       self.format(uri, params)
     end

@@ -15,7 +15,12 @@
         "1": {
           "title": "consumer finds relevant items faster when they become available",
           "id": 6,
-          "ideas": {}
+          "ideas": {
+            "1": {
+              "title": "sends an email / sms when a new item meeting the criteria is available",
+              "id": 13
+            }
+          }
         },
         "2": {
           "title": "consumer is able to narrow searching to more relevant items",

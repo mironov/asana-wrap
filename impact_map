@@ -1,0 +1,41 @@
+{
+  "title": "make blocket more relevant to what I want to buy",
+  "id": 1,
+  "formatVersion": 2,
+  "attr": {
+    "style": {
+      "background": "#333399"
+    }
+  },
+  "ideas": {
+    "1": {
+      "title": "Consumer",
+      "id": 3,
+      "ideas": {
+        "1": {
+          "title": "consumer finds relevant items faster when they become available",
+          "id": 6,
+          "ideas": {}
+        },
+        "2": {
+          "title": "consumer is able to narrow searching to more relevant items",
+          "id": 10,
+          "ideas": {
+            "1": {
+              "title": "better semantic driven classification model",
+              "id": 11
+            }
+          }
+        },
+        "3": {
+          "title": "consumer is able to buy item immediately, safely, and have it shipped",
+          "id": 12
+        }
+      }
+    },
+    "-1": {
+      "title": "me = developer",
+      "id": 5
+    }
+  }
+}

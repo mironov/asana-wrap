@@ -34,6 +34,7 @@ module Asana
     end
 
     def self.prepare_post_params(params)
+      temphash = {}
       temphash[:body] = params
       temphash
     end

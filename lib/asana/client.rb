@@ -24,6 +24,12 @@ module Asana
       response['data']
     end
 
+    def self.put_data(uri, params)
+      options = self.prepare_post_params(params)
+      response = self.put(uri, options)
+      response['data']
+    end
+
     private
 
     def self.prepare_get_params(params)

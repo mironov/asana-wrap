@@ -17,6 +17,18 @@ module Asana
       self.get_data(uri, params)
     end
 
+    def self.update(params = {})
+      uri = "/tasks/#{params[:task]}"
+      params.delete(:task)
+      self.put_data(uri, params)
+    end
+
+    def self.destroy(params = {})
+      uri = "/tasks/#{params[:task]}"
+      params.delete(:task)
+      self.delete(uri)
+    end
+
     def self.project_tasks(params = {})
       uri = "/projects/#{params[:project]}/tasks"
       params.delete(:project)

@@ -4,12 +4,12 @@ module Asana
 
   class Client
     include HTTParty
-    attr_accessor :token
+
+    @@token = nil
 
     def self.authenticate(token)
-      @token = token
+      @@token = token
       self.base_uri 'https://app.asana.com/api/1.0'
-      self.headers 'Authorization' => "Bearer #{@token}"
     end
 
     def self.get_data(uri, params)
@@ -36,12 +36,14 @@ module Asana
       temphash = {}
       mappings = {fields: 'opt_fields', assignee: 'assignee'}
       temphash[:query] = Hash[params.map {|k,v| [mappings[k]|| k, v] }]
+      temphash[:headers] = {'Authorization' => "Bearer #{@@token}"}
       temphash
     end
 
     def self.prepare_post_params(params)
       temphash = {}
       temphash[:body] = params
+      temphash[:headers] = {'Authorization' => "Bearer #{@@token}"}
       temphash
     end
   end

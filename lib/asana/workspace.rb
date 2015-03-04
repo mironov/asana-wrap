@@ -1,14 +1,14 @@
 module Asana
   class Workspace < Asana::Client
-    def all(params = {})
+    def self.all(params = {})
       uri = "/workspaces"
-      get_data(uri, params)
+      self.get_data(uri, params)
     end
 
-    def id(params = {})
+    def self.id(params = {})
       uri = "/workspaces/#{params[:workspace]}"
       params.delete(:workspace)
-      get_data(uri, params)
+      self.get_data(uri, params)
     end
   end
 end

@@ -1,14 +1,14 @@
 module Asana
   class Project < Asana::Client
-    def all(params = {})
+    def self.all(params = {})
       uri = "/projects"
-      get_data(uri, params)
+      self.get_data(uri, params)
     end
 
-    def id(params ={})
+    def self.id(params ={})
       uri = "/projects/#{params[:project]}"
       params.delete(:project)
-      get_data(uri, params)
+      self.get_data(uri, params)
     end
   end
 end

@@ -12,24 +12,30 @@ module Asana
       self.headers 'Authorization' => "Bearer #{@token}"
     end
 
-    def self.format(uri, params)
-      options = {}
-      options = self.prefix_engine(params)
-      self.getresponse(uri, options)
+    def self.get(uri, params)
+      options = self.prepare_get_params(params)
+      response = self.get(uri, options)
+      response['data']
     end
 
-private
-    def self.prefix_engine(params)
+    def self.post(uri, params)
+      options = self.prepare_post_params(params)
+      response = self.post(uri, options)
+      response['data']
+    end
+
+    private
+
+    def self.prepare_get_params(params)
       temphash = {}
       mappings = {fields: 'opt_fields', assignee: 'assignee'}
       temphash[:query] = Hash[params.map {|k,v| [mappings[k]|| k, v] }]
       temphash
     end
 
-    def self.getresponse(uri, options)
-      hash = self.get(uri, options)
-      hash = hash['data']
-      hash
+    def self.prepare_post_params(params)
+      temphash[:body] = params
+      temphash
     end
   end
 end

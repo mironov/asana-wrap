@@ -12,13 +12,13 @@ module Asana
       self.headers 'Authorization' => "Bearer #{@token}"
     end
 
-    def self.get(uri, params)
+    def self.get_data(uri, params)
       options = self.prepare_get_params(params)
       response = self.get(uri, options)
       response['data']
     end
 
-    def self.post(uri, params)
+    def self.post_data(uri, params)
       options = self.prepare_post_params(params)
       response = self.post(uri, options)
       response['data']

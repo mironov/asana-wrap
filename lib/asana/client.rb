@@ -1,7 +1,7 @@
 module Asana
   require 'httparty'
   require 'ostruct'
-  
+
   class Client
     include HTTParty
     attr_accessor :token
@@ -29,7 +29,7 @@ private
     def self.getresponse(uri, options)
       hash = self.get(uri, options)
       hash = hash['data']
-      puts hash
+      hash
     end
   end
 end

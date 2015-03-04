@@ -1,6 +1,6 @@
 module Asana
   class User < Asana::Client
-    
+
     def self.me(params = {})
       uri = "/users/me"
       self.format(uri, params)

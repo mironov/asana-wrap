@@ -6,40 +6,40 @@ module Asana
     include HTTParty
     attr_accessor :token
 
-    def self.authenticate(token)
+    def authenticate(token)
       @token = token
       self.base_uri 'https://app.asana.com/api/1.0'
       self.headers 'Authorization' => "Bearer #{@token}"
     end
 
-    def self.get_data(uri, params)
-      options = self.prepare_get_params(params)
+    def get_data(uri, params)
+      options = prepare_get_params(params)
       response = self.get(uri, options)
       response['data']
     end
 
-    def self.post_data(uri, params)
-      options = self.prepare_post_params(params)
-      response = self.post(uri, options)
+    def post_data(uri, params)
+      options = prepare_post_params(params)
+      response = self.class.post(uri, options)
       response['data']
     end
 
-    def self.put_data(uri, params)
-      options = self.prepare_post_params(params)
-      response = self.put(uri, options)
+    def put_data(uri, params)
+      options = prepare_post_params(params)
+      response = self.class.put(uri, options)
       response['data']
     end
 
     private
 
-    def self.prepare_get_params(params)
+    def prepare_get_params(params)
       temphash = {}
       mappings = {fields: 'opt_fields', assignee: 'assignee'}
       temphash[:query] = Hash[params.map {|k,v| [mappings[k]|| k, v] }]
       temphash
     end
 
-    def self.prepare_post_params(params)
+    def prepare_post_params(params)
       temphash = {}
       temphash[:body] = params
       temphash

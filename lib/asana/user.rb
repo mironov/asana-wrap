@@ -1,25 +1,25 @@
 module Asana
   class User < Asana::Client
 
-    def self.me(params = {})
+    def me(params = {})
       uri = "/users/me"
-      self.get_data(uri, params)
+      get_data(uri, params)
     end
 
-    def self.get_by_id(params = {})
+    def get_by_id(params = {})
       uri = "/users/#{params[:user]}"
       params.delete(:user)
-      self.get_data(uri, params)
+      get_data(uri, params)
     end
 
-    def self.all(params = {})
+    def all(params = {})
       uri = "/users"
-      self.get_data(uri, params)
+      get_data(uri, params)
     end
 
-    def self.by_workspace(params ={})
+    def by_workspace(params ={})
       uri = "/workspaces/#{params[:workspace]}/users"
-      self.get_data(uri, params)
+      get_data(uri, params)
     end
   end
 end

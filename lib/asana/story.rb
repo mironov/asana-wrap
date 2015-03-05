@@ -2,6 +2,7 @@ module Asana
   class Story < Asana::Client
     def self.by_task(params = {})
       uri = "/tasks/#{params[:task]}/stories"
+      params.delete(:task)
       self.get_data(uri, params)
     end
 

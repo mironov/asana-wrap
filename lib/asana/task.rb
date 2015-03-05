@@ -29,13 +29,13 @@ module Asana
       self.delete_data(uri, params)
     end
 
-    def self.project_tasks(params = {})
+    def self.by_project(params = {})
       uri = "/projects/#{params[:project]}/tasks"
       params.delete(:project)
       self.get_data(uri, params)
     end
 
-    def self.workspace_tasks(params = {})
+    def self.by_workspace(params = {})
       uri = "/workspaces/#{params[:workspace]}/tasks"
       params.delete(:workspace)
       self.get_data(uri, params)

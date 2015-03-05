@@ -10,5 +10,10 @@ module Asana
       params.delete(:project)
       self.get_data(uri, params)
     end
+
+    def self.by_workspace(params ={})
+      uri = "/workspaces/#{params[:workspace]}/projects"
+      self.get_data(uri, params)
+    end
   end
 end

@@ -26,7 +26,7 @@ module Asana
     def self.destroy(params = {})
       uri = "/tasks/#{params[:task]}"
       params.delete(:task)
-      self.delete(uri)
+      self.delete_data(uri, params)
     end
 
     def self.project_tasks(params = {})

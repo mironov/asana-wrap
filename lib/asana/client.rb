@@ -30,6 +30,18 @@ module Asana
       response['data']
     end
 
+    def self.delete_data(uri, params)
+      options = self.prepare_post_params(params)
+      response = self.delete(uri, options)
+      response['data']
+    end
+
+    def self.refresh_token(params)
+      options = self.prepare_post_params(params)
+      response = self.post('https://app.asana.com/-/oauth_token', options)
+      response.parsed_response
+    end
+
     private
 
     def self.prepare_get_params(params)

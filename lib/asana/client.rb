@@ -37,8 +37,7 @@ module Asana
     end
 
     def self.refresh_token(params)
-      options = self.prepare_post_params(params)
-      response = self.post('https://app.asana.com/-/oauth_token', options)
+      response = self.post('https://app.asana.com/-/oauth_token', { body: params })
       response.parsed_response
     end
 
